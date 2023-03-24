@@ -4,6 +4,16 @@
  * @package gsdspot
 */
 
+use GSDSPOT_THEME\inc\GSDSPOT_THEME;
+
+if(!defined('GSDSPOT_DIR_PATH')) {
+  define('GSDSPOT_DIR_PATH',untrailingslashit(get_template_directory() ) );
+};
+
+require_once GSDSPOT_DIR_PATH . '/inc/helpers/autoloader.php';
+
+GSDSPOT_THEME::get_instance();
+
 function gsd_enqueue_scripts() {
 
     /**register our custom stylesheet*/
@@ -26,6 +36,7 @@ wp_register_style(
 'bootstrap-css',
 /**src of stylesheet */
 get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css',
+//'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css',
 /**stylesheet dependencies */
 [],
 /**version of stylesheet in this case its made dynamic */
@@ -55,7 +66,8 @@ false,
     /**script name */
   'bootstrap-js',
   /**get location of script */
-  get_template_directory_uri() . '/assets/src/library/js/bootstrap.min.js',
+ //'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js',
+  get_template_directory_uri() . '/assets/src/library/js/bootstrap.bundle.min.js',
   /**dependencies */
   ['jquery'],
   /**version of script in this case we update dynamically */
