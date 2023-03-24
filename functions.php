@@ -4,7 +4,10 @@
  * @package gsdspot
 */
 
-use GSDSPOT_THEME\inc\GSDSPOT_THEME;
+
+
+
+
 
 if(!defined('GSDSPOT_DIR_PATH')) {
   define('GSDSPOT_DIR_PATH',untrailingslashit(get_template_directory() ) );
@@ -12,7 +15,14 @@ if(!defined('GSDSPOT_DIR_PATH')) {
 
 require_once GSDSPOT_DIR_PATH . '/inc/helpers/autoloader.php';
 
-GSDSPOT_THEME::get_instance();
+
+
+function gsdspot_get_theme_instance() {
+    //print_r('get inst ran func.php');
+    GSDSPOT_THEME\Inc\GSDSPOT_THEME::get_instance();
+};
+
+gsdspot_get_theme_instance();
 
 function gsd_enqueue_scripts() {
 

@@ -15,6 +15,7 @@ namespace GSDSPOT_THEME\Inc\Helpers;
  * @return void
  */
 function autoloader( $resource = '' ) {
+    
 	$resource_path  = false;
 	$namespace_root = 'GSDSPOT_THEME\\';
 	$resource       = trim( $resource, '\\' );
@@ -31,7 +32,7 @@ function autoloader( $resource = '' ) {
 		'\\',
 		str_replace( '_', '-', strtolower( $resource ) )
 	);
-
+   // print_r($path);
 	/**
 	 * Time to determine which type of resource path it is,
 	 * so that we can deduce the correct file path for it.
@@ -84,4 +85,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\GSDSPOT_THEME\Inc\Helpers\autoloader' );
+spl_autoload_register( '\GSDSPOT_THEME\Inc\helpers\autoloader' );

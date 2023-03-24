@@ -1,5 +1,7 @@
 <?php 
-namespace Gsdspot_theme\Inc\Traits;
+
+namespace GSDSPOT_THEME\Inc\Traits;
+
 trait Singleton {
    public function __construct() {
 
@@ -10,7 +12,7 @@ trait Singleton {
    }
 
    final public static function get_instance() {
-
+//print_r('run');
     static $instance = [];
 
     $called_class = get_called_class();
